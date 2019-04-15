@@ -1,0 +1,39 @@
+************* Discrete Power Bipolar Model ***********************
+** Medium Power Linear Switching Applications
+** Connections: Collector
+**              |  Base
+**              |  |  Emitter
+**              |  |  |
+**-----------------------------------------------------------------
+.SUBCKT TIP122  1  2  3
+Q1 1 2 4 Q1model
+Q2 1 4 3 Q2model 7.75
+D1 3 1 Dmodel
+R1 2 4 8.0E3
+R2 4 3 120
+.MODEL Dmodel D
++ IS=10.00E-15  RS=1.000E-3   N=1        XTI=3
++ CJO=10.00E-21 VJ=1          M=0.5      FC=0.5
+.MODEL Q1model NPN
++ IS=9.270E-9   BF=257        NF=1       VAF=100
++ IKF=0.1068    ISE=8.100E-9  NE=1.5     BR=0.0007915
++ NR=1          VAR=100       IKR=0.114  ISC=1.630E-10
++ NC=2.0        RB=0.00012    RE=0.00045 RC=1.58245 
++ EG=1.110      CJE=1.10E-10  VJE=0.75   MJE=0.63 
++ TF=1.000E-9   XTF=1         VTF=10     ITF=1.00E-2
++ CJC=1.75E-11 VJC=0.75       MJC=0.18    XCJC=0.9
++ FC=0.5        TR=1.000E-9
+.MODEL Q2model NPN
++ IS=9.270E-9   BF=257        NF=1       VAF=100
++ IKF=0.1068    ISE=8.100E-9  NE=1.5     BR=0.0007915
++ NR=1          VAR=100       IKR=0.114  ISC=1.630E-10
++ NC=2.0        RB=0.00012    RE=0.00045 RC=1.58245 
++ EG=1.110      CJE=1.10E-10  VJE=0.75   MJE=0.63 
++ TF=1.000E-9   XTF=1         VTF=10     ITF=1.00E-2
++ CJC=1.75E-11  VJC=0.75      MJC=0.18   XCJC=0.9
++ FC=0.5        TR=1.000E-9
+.ENDS
+**-----------------------------------------------------------------
+** Creation: Sep.-02-2008   Rev: 0.0
+** Fairchild Semiconductor
+
