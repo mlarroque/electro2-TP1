@@ -26,7 +26,20 @@ def graphRsweep(Ra,Rb,Rc,VoReg,Vcc):
     plt.plot(I,V,'b')
     plt.plot(Ireg,Vreg,'b')
 
-def graphPd(Ri,Rf,Ra,Rb,Rc,Vcc,VoReg):
+def graphPdRl(Ri,Rf,Ra,Rb,Rc,Vcc,VoReg):
+    IoCC, IoMAX, P = calcParam(Ra,Rb,Rc,VoReg,Vcc)
+    Rload = np.arange(Ri,Rf,(Rf-Ri)/100)
+    Po = []
+    for i in range(0,len(Rload)):
+        if Rload[i] < VoReg/(IoMAX):
+            PoAux = Rload[i]*((0.7*(Rb+Rc))/(Ra*Rc-Rb*Rload[i]))**2
+            Po.append(PoAux)
+        else:
+            PoAux = VoReg**2/Rload[i]
+            Po.append(PoAux)
+    plt.plot(Rload,Po,'g')
+
+def graphPdT2(Ri,Rf,Ra,Rb,Rc,Vcc,VoReg):
     IoCC, IoMAX, P = calcParam(Ra,Rb,Rc,VoReg,Vcc)
     Rload = np.arange(Ri,Rf,(Rf-Ri)/100)
     PT2 = []
@@ -86,8 +99,8 @@ def main():
         print(' Iocc: %s A' % (IoCC))
         print(' IoMAX: %s A' % (IoMAX))
         print(' Potencia maxima en T2: %s W' % (PT2MAX))
-        print(' Potencia en Ra: %s' % (IoMAX**2*Ra[i]))
-        sensPd,sensIocc,sensIoMAX = sensibilidades(Ra,Rb,Rc,Vcc,VoReg)
+        print(' Potencia en Ra: %s W' % (IoMAX**2*Ra[i]))
+        sensPd,sensIocc,sensIoMAX = sensibilidades(Ra[i],Rb[i],Rc[i],Vcc,VoReg)
         print(' Sensibilidad de Ra en Pd: %s' % (sensPd[0]))
         print(' Sensibilidad de Rb en Pd: %s' % (sensPd[1]))
         print(' Sensibilidad de Rc en Pd: %s' % (sensPd[2]))
@@ -104,11 +117,17 @@ def main():
         plt.xlabel('Io [A]')
         plt.ylabel('Vo [V]')
         plt.figure('Pt2(Rload) Combinacion nro %s' % (i))
-        graphPd(0,10,Ra[i],Rb[i],Rc[i],Vcc,VoReg)
+        graphPdT2(0,10,Ra[i],Rb[i],Rc[i],Vcc,VoReg)
         plt.xticks(np.arange(0,11,1))
         plt.grid(True,'both','both')
         plt.xlabel('Rload [ohms]')
         plt.ylabel('Pt2 [W]')
+        plt.figure('Po(Rload) Combinacion nro %s' % (i))
+        graphPdRl(0,10,Ra[i],Rb[i],Rc[i],Vcc,VoReg)
+        plt.xticks(np.arange(0,11,1))
+        plt.grid(True,'both','both')
+        plt.xlabel('Rload [ohms]')
+        plt.ylabel('Po [W]')
         plt.show()
 
 
