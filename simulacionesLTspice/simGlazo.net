@@ -1,0 +1,30 @@
+* C:\Users\malen\Desktop\ELECTRONICA II\electro2-TP1\simulacionesLTspice\simGlazo.asc
+XU1 0 V- N001 0 Vcrit LM324
+V1 N001 0 15
+D1 N001 N002 1N4148
+D2 N002 N003 1N4148
+Q3 Vcrit N003 P001 0 BC557B
+R7 N001 P001 820
+V2 0 N006 7.7
+R1 Vd N006 100
+R2 V- Vd 470
+R3 N007 V- 900
+R6 N003 0 47k
+XQ1 N001 Vcrit N004 TIP122
+R4 N004 N007 1
+R5 N004 N005 604
+R8 0 N005 8k4
+Q2 Vcrit N005 N007 0 BC547B
+R9 N007 0 10k
+D3 Vd 0 1N750
+C1 Vcrit V- 1000n
+.model D D
+.lib C:\Users\malen\OneDrive\Documentos\LTspiceXVII\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\malen\OneDrive\Documentos\LTspiceXVII\lib\cmp\standard.bjt
+.tran 1ms
+.inc LM324.txt
+.lib "C:\Program Files\LTC\LTspiceXVII\lib\''TIP122''.lib"
+.backanno
+.end
