@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -29,9 +29,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -55,13 +57,17 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 1.5cm
+\topmargin 1.5cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style french
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -75,8 +81,16 @@
 
 \begin_body
 
-\begin_layout Part
-TP ELECTRÓNICA II - Fuente Regulada de Tensión
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset include
+LatexCommand include
+filename "cover.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -484,6 +498,7 @@ no posee error
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $\frac{V_{o}}{R3}=\frac{V_{Z}+V_{D}}{R2}\Rightarrow V_{o}=(V_{Z}+V_{D}).\frac{R3}{R2}$
 \end_inset
 
@@ -586,6 +601,7 @@ Realimentador con Tensión de Entrada Nula
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $\Rightarrow f=\frac{I_{2}}{V_{o}}\lfloor_{Vin=0}=-\frac{1}{R3}$
 \end_inset
 
@@ -598,6 +614,7 @@ Por ende, la expresión de la tensión de salida hallada con anterioridad
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $P_{E}=\frac{V_{o}}{I_{N}}=\frac{V_{o}}{-(V_{Z}+V_{D})}.R2\simeq\frac{1}{f}=\frac{-1}{R3}\Rightarrow V_{o}\simeq(V_{Z}+V_{D}).\frac{R3}{R2}$
 \end_inset
 
@@ -705,7 +722,7 @@ pequeños
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1050,6 +1067,7 @@ Asumiendo que la tensión del nodo crítico mostrado en la figura es constante
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $I_{amplificada}=\frac{(A_{vol}(V^{+}-V^{-}))-V_{críticco}}{R_{opamp}}$
 \end_inset
 
@@ -1125,6 +1143,7 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="8">
 <features tabularvalignment="middle">
@@ -1424,7 +1443,7 @@ pre-regulador
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1481,6 +1500,7 @@ cae
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $V_{D1}+V_{D2}=I_{emisor}.R4+V_{EBon}\Rightarrow I_{emisor}=\frac{V_{D1}+V_{D2}-V_{EBon}}{R4}\simeq I_{colector}$
 \end_inset
 
@@ -1496,6 +1516,7 @@ si se considera que
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $I_{colector}\simeq\frac{V_{D1}}{R4}$
 \end_inset
 
@@ -1559,6 +1580,7 @@ Por otro lado, la resistencia
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $I_{D1}=I_{R5}-I_{base}=\frac{V1-2V_{D1}}{R5}-\frac{V_{D1}}{H_{FE}.R4}\Rightarrow R5=\frac{V1-2V_{D1}}{I_{D1}+\frac{V_{D1}}{H_{FE}.R4}}$
 \end_inset
 
@@ -1583,9 +1605,10 @@ es para la implementación del pre-regulador:
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="2">
 <features tabularvalignment="middle">
@@ -1655,6 +1678,7 @@ BC557 -
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="2">
 <features tabularvalignment="middle">
@@ -1847,8 +1871,934 @@ Finalmente, este circuito amplifica la corriente de corrección para concretar
 Protección - Foldback
 \end_layout
 
+\begin_layout Subsubsection
+Protección lineal y protección foldback
+\end_layout
+
 \begin_layout Standard
-MANUUUUUUUUUUUUUUUUUUUUUEL
+Al momento de agregar una protección al circuito, se deben analizar los
+ siguientes diseños para concluir cual es el optimo para implementar.
+ La protección lineal es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/linealCIr.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Protección Lineal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta protección sirve para que no se pueda superar a una 
+\begin_inset Formula $I_{o(MAX)}$
+\end_inset
+
+, al la cual al superarla la tensión de salida decrece a 
+\begin_inset Formula $V_{o}=I_{o(MAX)}\cdotp R_{L}$
+\end_inset
+
+.
+ La 
+\begin_inset Formula $I_{o(MAX)}$
+\end_inset
+
+ se puede calcular suponiendo que el transistor de protección esta encendido,
+ y que la corriente que circula por el colector del transistor es menor
+ que la que circula por 
+\begin_inset Formula $I_{o}$
+\end_inset
+
+.
+ Por lo que se puede plantear la siguiente malla:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $0.7V-I_{o(MAX)}\cdotp R_{A}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Despejando llegamos a 
+\begin_inset Formula $I_{o(MAX)}=\frac{0.7V}{R_{A}}$
+\end_inset
+
+.
+ Otro factor importante a la hora de elegir una protección es la potencia
+ maxima disipada en el transistor de paso.
+ En este caso, se puede calcular como:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $P_{D}|_{Tpaso}=V_{CE}\cdotp I_{C}\thickapprox V_{1}\cdotp I_{o(MAX)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como resumen, la protección lineal actúa de acorde al siguiente graficó:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/lineal.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Protección Lineal 
+\begin_inset Formula $V_{o}(I_{o})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las desventajas de este circuito son el valor de resistencia especifico
+ de 
+\begin_inset Formula $R_{A}$
+\end_inset
+
+ y la gran potencia disipada en el transistor de paso.
+ La ventaja es la consistencia de la 
+\begin_inset Formula $R_{L(MIN)}$
+\end_inset
+
+ al ir variando 
+\begin_inset Formula $V_{o(REG)}$
+\end_inset
+
+, ya que esta es 
+\begin_inset Formula $R_{L(MIN)}=\frac{V_{o(REG)}}{I_{o(MAX)}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Un mejor circuito, el cual es el que se implemento en nuestra fuente es
+ el circuito de protección de foldback.
+ El circuito es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/foldback.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Protección Foldback
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para obtener la 
+\begin_inset Formula $I_{o(MAX)}$
+\end_inset
+
+ se procede a hacer las mismas asunciones que antes, por lo que se puede
+ escribir la siguiente malla:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $(V_{o}+I_{o}\cdotp R_{A})\cdotp\frac{R_{B}}{R_{B}+R_{C}}+0.7V-I_{o}\cdotp R_{A}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Despejando 
+\begin_inset Formula $V_{o}$
+\end_inset
+
+se obtiene 
+\begin_inset Formula $V_{o}(I_{o}):$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $V_{o}=(I_{o}\cdotp R_{A}-0.7V)\cdotp\frac{R_{B}+R_{C}}{R_{B}}-I_{o}\cdotp R_{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde despejando la 
+\begin_inset Formula $I_{o}$
+\end_inset
+
+ se obtiene:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $I_{o}=\frac{V_{o}\cdotp R_{B}+0.7V\cdotp(R_{B}+R_{C})}{R_{A}\cdotp R_{C}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde si 
+\begin_inset Formula $V_{o}=0$
+\end_inset
+
+ se obtiene 
+\begin_inset Formula $I_{o(CC)}$
+\end_inset
+
+ (corriente en corto circuito):
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $I_{o(CC)}=0.7V\frac{(R_{B}+R_{C})}{R_{A}\cdotp R_{C}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora si 
+\begin_inset Formula $V_{o}=V_{REG}$
+\end_inset
+
+ se obtiene 
+\begin_inset Formula $I_{o(MAX)}$
+\end_inset
+
+ (corriente maxima):
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $I_{o(MAX)}=\frac{V_{REG}\cdotp R_{B}+0.7V\cdotp(R_{B}+R_{C})}{R_{A}\cdotp R_{C}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación se calcula la potencia disipada en el transistor.
+ Comenzamos la expresión:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $P_{D}|_{Tpaso}=V_{CE}\cdotp I_{C}\thickapprox(V_{1}-V_{o})\cdotp I_{o}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación reemplazo en 
+\begin_inset Formula $V_{o}$
+\end_inset
+
+ la expresión en función de 
+\begin_inset Formula $I_{o}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $P_{D}|_{Tpaso}\thickapprox(V_{1}-I_{o}\cdotp\frac{R_{A}\cdotp R_{C}}{R_{B}}+0.7V\cdotp\frac{R_{B}+R_{C}}{R_{B}})\cdotp I_{o}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para encontrar la maxima potencia, se busca el máximo derivando respecto
+ de la corriente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{\partial(P_{D}|_{Tpaso})}{\partial(I_{o})}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Despejando la corriente se llega a:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $I_{o}^{*}=\frac{R_{B}}{2\cdotp R_{A}\cdotp R_{C}}\cdotp V_{1}+0.35V\cdotp\frac{R_{A}+R_{C}}{R_{A}\cdotp R_{C}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reemplazando 
+\begin_inset Formula $I_{o}^{*}$
+\end_inset
+
+ en 
+\begin_inset Formula $V_{o}$
+\end_inset
+
+ obtenemos 
+\begin_inset Formula $V_{o}^{*}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $V_{o}^{*}=\frac{1}{2}\cdotp[V_{1}-0.7V\cdotp\frac{R_{B}+R_{C}}{R_{B}}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ultimo se obtiene 
+\begin_inset Formula $P_{D}|_{Tpaso}(MAX)$
+\end_inset
+
+ reemplazando 
+\begin_inset Formula $V_{o}^{*}$
+\end_inset
+
+ y 
+\begin_inset Formula $I_{o}^{*}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $P_{D}|_{Tpaso(MAX)}=\frac{(V_{1}\cdotp R_{B}+0.7V\cdotp(R_{B}+R_{C}))^{2}}{4\cdotp R_{A}\cdotp R_{B}\cdotp R_{C}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Elección de componentes
+\end_layout
+
+\begin_layout Standard
+Para la elección de componentes se escribió un script en Python de manera
+ de encontrar los parámetros óptimos en base a la potencia disipada en el
+ transistor de paso y los valores de resistencia individuales y sus sensibilidad
+es.
+ Sabemos que la 
+\begin_inset Formula $V_{o(REG)}=9V$
+\end_inset
+
+ y 
+\begin_inset Formula $V_{1}=15V$
+\end_inset
+
+ y imponemos que 
+\begin_inset Formula $I_{o(MAX)}=1.4$
+\end_inset
+
+, donde la maxima realmente es 
+\begin_inset Formula $1.5A$
+\end_inset
+
+ pero se propone una menor para tener un margen de error de 
+\begin_inset Formula $100mV$
+\end_inset
+
+.
+ De esta manera, reemplazamos estos valores y podemos despejar 
+\begin_inset Formula $R_{C}(R_{B})$
+\end_inset
+
+ suponiendo 
+\begin_inset Formula $R_{A}$
+\end_inset
+
+ constante.
+ Lo cual nos lleva a la expresión:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $R_{C}=R_{B}\cdotp\frac{V_{o(REG)}+0.7V}{I_{o(MAX)}\cdotp R_{A}-0.7V}=R_{B}\cdotp\frac{9.7V}{1.4A\cdotp R_{A}-0.7V}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Partiendo de arreglos con valores de 
+\begin_inset Formula $R_{A}$
+\end_inset
+
+ en 
+\begin_inset Formula $(0.55\Omega-1.05\Omega)$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{B}$
+\end_inset
+
+ en 
+\begin_inset Formula $(200\Omega-2000\Omega)$
+\end_inset
+
+ como criterio de diseño, teniendo en cuenta que necesito 
+\begin_inset Formula $1.4A\cdotp R_{A}-0.7V>0$
+\end_inset
+
+ por la ecuación anterior (con lo que obtenemos 
+\begin_inset Formula $R_{A}>\frac{0.7V}{1.4A}=500m\Omega$
+\end_inset
+
+) se analizaron las combinaciones posibles.
+ Imponiendo el criterio de diseño de que la potencia disipada en el transistor
+ de paso sea menor a la disipada en la protección lineal 
+\begin_inset Formula $P_{D}|_{Tpaso}<21W$
+\end_inset
+
+, que la suma de la resistencias 
+\begin_inset Formula $R_{B}$
+\end_inset
+
+ y 
+\begin_inset Formula $R_{C}$
+\end_inset
+
+ sea mayor a 
+\begin_inset Formula $1k\Omega$
+\end_inset
+
+ y menor a 
+\begin_inset Formula $10k\Omega$
+\end_inset
+
+, y que la resistencia 
+\begin_inset Formula $R_{B}$
+\end_inset
+
+ ses mayor a 
+\begin_inset Formula $600\Omega$
+\end_inset
+
+; se obtuvieron 7 combinaciones posibles, de las cuales se eligió la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+R_{A}=1\Omega\\
+R_{B}=610\Omega\\
+R_{C}\thickapprox8453\Omega
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con estos valores de tienen los siguientes valores de parámetros:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+I_{o(CC)}=0.751A\\
+I_{o(MAX)}=1.4A\\
+P_{D}|_{Tpaso(MAX)}=11.64W\\
+P_{R_{A}}=1.96W\\
+R_{L(MIN)}=6.43\Omega
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación se calcularon las sensibilidades de las resistencias en diferente
+s parámetros:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+—–
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{A}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{B}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{C}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{P_{D}}^{R}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.122$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.236$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{I_{o(CC)}}^{R}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.067$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.067$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S_{I_{o(MAX)}}^{R}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sensibilidades
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede apreciar, la resistencia 
+\begin_inset Formula $R_{A}$
+\end_inset
+
+ tiene alta sensibilidad por lo que debe ser elegida cuidadosamente para
+ que valga el valor calculado.
+\end_layout
+
+\begin_layout Subsubsection
+Análisis de datos
+\end_layout
+
+\begin_layout Standard
+Con las resistencias calculadas en la sección anterior se graficaron los
+ siguientes gráficos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Po(Rload).png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Potencia en la carga 
+\begin_inset Formula $(R_{L})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Vo(Io).png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{o}(I_{o})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Pt2(Rload).png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Potencia en el transistor de paso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1924,7 +2874,7 @@ A modo de mostrar como actuaría el lazo de realimentación, se utilizará
 .
  Por lo tanto, la corriente de salida que corresponde a la del emisor del
  Darlington disminuirá y en definitiva dsiminuirá la corriente que circule
- por la carga, lo que ocasionaré que se produzca un cambio de tensión que
+ por la carga, lo que ocasionaré que se produzca un cambio de tensión Rque
  contrarreste al error generado inicialmente.
  En esta secuencia se puede notar como el lazo actúa ante un aumento de
  la tensión de salida.
@@ -2103,6 +3053,7 @@ Luego, considerando que se utiliza un capacitor convencional para los cuales
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $R_{thd-ambiente}=\frac{T_{j}-T_{a}}{P}-R_{thj-c}-R_{thc-d}=(\frac{153.84-25}{}-1-1.92)°C/W\simeq$
 \end_inset
 
@@ -2211,6 +3162,7 @@ A partir de este circuito se pueden plantear las siguientes ecuaciones:
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $V^{+}-V^{-}=\frac{(V_{D}+V_{Z}).(Rin//R3)}{R2+(R3//Rin)}\simeq\frac{(V_{D}+V_{Z}).R3}{R2+R3}\Rightarrow V_{o}\simeq A_{vol}.\frac{(V_{D}+V_{Z}).R3}{R2+R3}$
 \end_inset
 
@@ -2218,6 +3170,7 @@ A partir de este circuito se pueden plantear las siguientes ecuaciones:
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $\Rightarrow a=\frac{V_{o}}{I_{N}}=\frac{(V_{o}).(R2)}{-(V_{D}+V_{Z})}\simeq\frac{-A_{vol.}R2.R3}{R2+R3}=-A_{vol}(R2//R3)$
 \end_inset
 
@@ -2274,6 +3227,7 @@ Otro parámetro importante que se puede calcular analíticamente es el del
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $\eta=\frac{V_{o}}{V_{supply}}=\frac{9V}{11.6V}.100\%\simeq77.6\%$
 \end_inset
 
@@ -2587,6 +3541,7 @@ Para la simulación, se utilizó una fuente de tensión de alimentación de
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $PSRR=20log(\frac{RippleSUPPLY}{RippleOUT})=20log(\frac{2V}{50uV})\simeq92dB$
 \end_inset
 
@@ -2629,6 +3584,7 @@ Para el caso de carga mínima, el circuito modificó su funcionamiento para
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $\eta_{vacío}=\frac{9Volts}{13Volts}.100\%\simeq69.2\%$
 \end_inset
 
@@ -2636,6 +3592,7 @@ Para el caso de carga mínima, el circuito modificó su funcionamiento para
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $\eta_{rloadmin}=\frac{9Volts}{13.5Volts}.100\%\simeq66.7\%$
 \end_inset
 
@@ -2916,6 +3873,7 @@ El cambio que se notó comparando con la medición en vacío es tan solo un
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $PSRR_{rload=60\Omega}\simeq20log(\frac{600mV}{6mV})=40dB$
 \end_inset
 
@@ -2995,6 +3953,7 @@ Si se aplica la fórmula del
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Formula $PSRR_{rload=15\Omega}\simeq20log(\frac{2.28V}{630mV})\simeq11.2dB$
 \end_inset
 

@@ -25,6 +25,12 @@ def graphRsweep(Ra,Rb,Rc,VoReg,Vcc):
         Vreg.append(VoReg)
     plt.plot(I,V,'b')
     plt.plot(Ireg,Vreg,'b')
+    plt.plot([IoMAX], [VoReg], 'ro',label = "Rmin: %0.2f ohms" % (VoReg/IoMAX))
+    plt.plot([0.7], [VoReg], 'g^',label = "R: %0.2f ohms" % (VoReg/0.7))
+    IpMAX = Vcc*(Rb/(2*Ra*Rc))+0.35*((Rb+Rc)/(Ra*Rc))
+    VpMAX = 0.5*(Vcc-0.7*((Rb+Rc)/Rb))
+    plt.plot([IpMAX], [VpMAX], 'bs', label = "RMaxPd: %0.2f ohms" % (VpMAX/IpMAX))
+    plt.legend()
 
 def graphPdRl(Ri,Rf,Ra,Rb,Rc,Vcc,VoReg):
     IoCC, IoMAX, P = calcParam(Ra,Rb,Rc,VoReg,Vcc)
@@ -40,7 +46,7 @@ def graphPdRl(Ri,Rf,Ra,Rb,Rc,Vcc,VoReg):
     plt.plot(Rload,Po,'g')
 
 def graphPdT2(Ri,Rf,Ra,Rb,Rc,Vcc,VoReg):
-    IoCC, IoMAX, P = calcParam(Ra,Rb,Rc,VoReg,Vcc)
+    IoCC, IoMAX, PT2MAX = calcParam(Ra,Rb,Rc,VoReg,Vcc)
     Rload = np.arange(Ri,Rf,(Rf-Ri)/100)
     PT2 = []
     for i in range(0,len(Rload)):
@@ -50,7 +56,11 @@ def graphPdT2(Ri,Rf,Ra,Rb,Rc,Vcc,VoReg):
         else:
             PT2aux = (Vcc-VoReg)*(VoReg/Rload[i])
             PT2.append(PT2aux)
+
     plt.plot(Rload,PT2,'r')
+    plt.plot([VoReg/IoMAX], [(Vcc-VoReg)*(IoMAX)], 'bo',label = "(%0.2f ohms,%0.2f Watts)" % (VoReg/IoMAX,(Vcc-VoReg)*(IoMAX)))
+    plt.plot([Rload[np.argmax(PT2)]], [PT2MAX], 'g^',label = "(%0.2f ohms,%0.2f Watts)" % (Rload[np.argmax(PT2)],PT2MAX))
+    plt.legend()
 
 def sensibilidades(Ra,Rb,Rc,Vcc,VoReg): #cada arreglo tiene sensiblidades en orden [Ra,Rb,Rc]
     sensPd = []
