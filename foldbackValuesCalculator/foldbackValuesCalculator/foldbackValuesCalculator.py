@@ -140,7 +140,5 @@ def main():
         plt.ylabel('Po [W]')
         plt.show()
 
-
-
 if __name__ == "__main__":
     main()
