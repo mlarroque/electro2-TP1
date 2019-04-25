@@ -126,7 +126,7 @@ El tema de este trabajo es la regulación de tensión de una fuente.
  un puente de diodos seguido de un banco de capacitores) no es constante,
  por ende no es perfectamente de corriente continua.
  Generalmente esta señal de salida del rectificador tiene defectos, como
- riples, oscilaciones y cambios abruptos, lo cual no es deseable a la hora
+ ripples, oscilaciones y cambios abruptos, lo cual no es deseable a la hora
  de utilizar esta tensión como una referencia para el funcionamiento de
  un circuito ya que cualquier variación de la tensión afectará la referencia
  del circuito y por lo tanto repercutirá en sus valores de salida.
@@ -139,10 +139,10 @@ El tema de este trabajo es la regulación de tensión de una fuente.
 La regulación de la tensión implica generar una referencia de tensión constante
  a partir de la referencia que presenta los defectos mencionados, teniendo
  en cuenta que es deseable el mayor rendimiento de potencia posible, estabilidad
-, baja impendancia de salida, entre otros factores.
+, baja impedancia de salida, entre otros factores.
  A continuación, se abordará el diseño del regulador de una fuente de tensión,
  desarrollándose el proceso de diseño del mismo, las simulaciones, el análisis
- teórico, la materialización y la corroboración del funcionamiento del mismo.
+ teórico, la materialización y la colaboración del funcionamiento del mismo.
 \end_layout
 
 \begin_layout Section
@@ -365,9 +365,9 @@ Diagrama en Bloques de Señal
 \end_layout
 
 \begin_layout Standard
-El hecho de diseñar un circuito tal que permita ser modelado análiticamente
+El hecho de diseñar un circuito tal que permita ser modelado analíticamente
  según el diagrama de realimentación anterior permite controlar las variaciones
- de salida mediante un bloque realimentador y lograr la estabilidad.
+ de salida mediante un bloque re-alimentador y lograr la estabilidad.
  Esta estabilidad será posible siempre y cuando se realice un correcto diseño
  de cada bloque, y ese será el desafío de este trabajo.
 \end_layout
@@ -382,7 +382,7 @@ A continuación se propone un diagrama en bloques pero esta vez de un modelo
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -407,7 +407,7 @@ Diagrama en Bloques de Regulador
 
 \begin_layout Standard
 Como se puede notar, el esquema anterior presenta los siguientes módulos:
- preregulador, amplificador de error, bloque de paso, bloque de referencia,
+ pre-regulador, amplificador de error, bloque de paso, bloque de referencia,
  bloque de muestreo, protección de salida y carga.
 \end_layout
 
@@ -449,7 +449,7 @@ referencia y muestreo de error
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -479,7 +479,7 @@ Como se puede notar, existe un nodo de muestreo vinculado con la salida
 \end_inset
 
  y también existe un nodo de referencia con tensión negativa debido a la
- caida de un diodo en directa y otro diodo zenner en regulación.
+ caída de un diodo en directa y otro diodo zener en regulación.
 \end_layout
 
 \begin_layout Standard
@@ -503,7 +503,7 @@ no posee error
 \begin_inset Formula $"R2"$
 \end_inset
 
-, puediendose plantear la siguiente ecuación:
+, pudiéndose plantear la siguiente ecuación:
 \end_layout
 
 \begin_layout Standard
@@ -515,8 +515,8 @@ no posee error
 \end_layout
 
 \begin_layout Standard
-Notesé que este razonamiento para la obtención de la tensión de salida es
- el mismo que se realiza para el análisis deun circuito inversor como el
+Nótese que este razonamiento para la obtención de la tensión de salida es
+ el mismo que se realiza para el análisis de un circuito inversor como el
  siguiente:
 \end_layout
 
@@ -525,11 +525,7 @@ Notesé que este razonamiento para la obtención de la tensión de salida es
 placement H
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -558,8 +554,8 @@ De echo, guiándose por el diagrama de bloques de señal se puede notar que
 \begin_inset Formula $R3$
 \end_inset
 
- corresponde al realimentador mientras que el conjunto de diodos y las resistenc
-ia 
+ corresponde al re-alimentador mientras que el conjunto de diodos y las
+ resistencia 
 \begin_inset Formula $R2$
 \end_inset
 
@@ -574,7 +570,7 @@ Aún más, analizando los nodos de entrada y de salida, se puede notar que
 \begin_inset Formula $"f"$
 \end_inset
 
- del realimentador de la siguiente manera:
+ del re-alimentador de la siguiente manera:
 \end_layout
 
 \begin_layout Standard
@@ -582,17 +578,13 @@ Aún más, analizando los nodos de entrada y de salida, se puede notar que
 placement H
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Realimentador con Tensión de Entrada Nula
+Re-alimentador con Tensión de Entrada Nula
 \end_layout
 
 \end_inset
@@ -631,7 +623,7 @@ Por ende, la expresión de la tensión de salida hallada con anterioridad
 \end_layout
 
 \begin_layout Standard
-Llegandosé asi a lo mismo que lo anterior, sin embargo esto es válido siempre
+Llegándose así a lo mismo que lo anterior, sin embargo esto es válido siempre
  y cuando el producto 
 \begin_inset Formula $"a.f"$
 \end_inset
@@ -677,7 +669,7 @@ pequeño
 \end_inset
 
 , entonces esto define una relación de compromiso.
- A continuación se tendra en cuenta esto para poder definir los valores
+ A continuación se tendrá en cuenta esto para poder definir los valores
  de las resistencias 
 \begin_inset Formula $R2$
 \end_inset
@@ -690,7 +682,7 @@ pequeño
 \end_layout
 
 \begin_layout Standard
-Notesé que la ganancia de lazo será mayor para valores de 
+Nótese que la ganancia de lazo será mayor para valores de 
 \begin_inset Formula $R3$
 \end_inset
 
@@ -735,6 +727,8 @@ status collapsed
 
 \begin_layout Plain Layout
 \align center
+
+\size footnotesize
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="6">
 <features tabularvalignment="middle">
@@ -749,6 +743,8 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 R1
 \end_layout
 
@@ -758,6 +754,8 @@ R1
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 R2
 \end_layout
 
@@ -767,6 +765,8 @@ R2
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 R3
 \end_layout
 
@@ -776,6 +776,8 @@ R3
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Diodo Zener
 \end_layout
 
@@ -785,6 +787,8 @@ Diodo Zener
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Diodo Común
 \end_layout
 
@@ -794,6 +798,8 @@ Diodo Común
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 V2 (tensión de polarización
 \end_layout
 
@@ -805,6 +811,8 @@ V2 (tensión de polarización
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Formula $100\Omega$
 \end_inset
 
@@ -817,6 +825,8 @@ V2 (tensión de polarización
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Formula $470\Omega$
 \end_inset
 
@@ -829,6 +839,8 @@ V2 (tensión de polarización
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Formula $0\Omega$
 \end_inset
 
@@ -845,6 +857,8 @@ V2 (tensión de polarización
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 1N750 - 
 \begin_inset Formula $V_{Z}=3.9V$
 \end_inset
@@ -862,6 +876,8 @@ V2 (tensión de polarización
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 1N4148 - 
 \begin_inset Formula $V_{D}=0.8V$
 \end_inset
@@ -879,6 +895,8 @@ V2 (tensión de polarización
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Formula $7.7V$
 \end_inset
 
@@ -913,7 +931,7 @@ Valores de Componentes de los Bloques de Referencia y Muestreo de Error
 \end_layout
 
 \begin_layout Standard
-Notesé que con estos valores se obtiene un cociente de 
+Nótese que con estos valores se obtiene un cociente de 
 \begin_inset Formula $\frac{V_{Z}+V_{D}}{R2}=0.01$
 \end_inset
 
@@ -942,7 +960,7 @@ y
 \begin_inset Formula $10mA$
 \end_inset
 
-, mientras que la corriente que los diodos se polarizen correctamente es
+, mientras que la corriente que los diodos se polaricen correctamente es
  de 
 \begin_inset Formula $20mA$
 \end_inset
@@ -1026,8 +1044,8 @@ corto
 \begin_inset Quotes erd
 \end_inset
 
-) y de manera que las correciones no generen un nuevo error, si no que lo
- minimizen.
+) y de manera que las correcciones no generen un nuevo error, si no que
+ lo minimicen.
  Esto corresponde con la realimentación negativa, ya que en cada corrección
  el error se minimiza hasta anularse y provocando que no sea necesario seguir
  corrigiendo la salida.
@@ -1044,7 +1062,7 @@ corto
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1071,7 +1089,7 @@ Circuito Amplificador de Error
 Asumiendo que la tensión del nodo crítico mostrado en la figura es constante
  (esto se mostrará más adelante al describir el bloque de paso), se puede
  notar que el circuito amplifica el error ingresado como tensión en el borne
- negativo del operacional, y lo hace generandouna corriente cuya magnitud
+ negativo del operacional, y lo hace generando una corriente cuya magnitud
  y sentido se obtienen mediante la siguiente ecuación:
 \end_layout
 
@@ -1169,6 +1187,8 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 Opamp - serie
 \end_layout
 
@@ -1178,6 +1198,8 @@ Opamp - serie
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $A_{vol}$
 \end_inset
 
@@ -1190,6 +1212,8 @@ Opamp - serie
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $R_{opamp}$
 \end_inset
 
@@ -1202,6 +1226,8 @@ Opamp - serie
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $V_{saturación}$
 \end_inset
 
@@ -1214,6 +1240,8 @@ Opamp - serie
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $I_{amplificada}+_{máx}$
 \end_inset
 
@@ -1226,6 +1254,8 @@ Opamp - serie
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $I_{amplificada}-_{máx}$
 \end_inset
 
@@ -1238,6 +1268,8 @@ Opamp - serie
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $I_{source-opampMÁX}$
 \end_inset
 
@@ -1250,6 +1282,8 @@ Opamp - serie
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $I_{sink-opampMÁX}$
 \end_inset
 
@@ -1264,6 +1298,8 @@ Opamp - serie
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 LM324
 \end_layout
 
@@ -1273,6 +1309,8 @@ LM324
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $10^{5}$
 \end_inset
 
@@ -1285,6 +1323,8 @@ LM324
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $100\Omega$
 \end_inset
 
@@ -1297,6 +1337,8 @@ LM324
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $V_{alimentación}$
 \end_inset
 
@@ -1309,6 +1351,8 @@ LM324
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $\frac{V1-V_{crítico}}{100\Omega}$
 \end_inset
 
@@ -1321,6 +1365,8 @@ LM324
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $\frac{0V-V_{crítico}}{100\Omega}$
 \end_inset
 
@@ -1333,6 +1379,8 @@ LM324
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $20mA$
 \end_inset
 
@@ -1345,6 +1393,8 @@ LM324
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size scriptsize
 \begin_inset Formula $8mA$
 \end_inset
 
@@ -1395,7 +1445,7 @@ l, cabe mencionar que más adelante se verá que la tensión
 
  será de 15V y la tensión del nodo crítico será cercana a la tensión del
  valor de salida de la fuente, lo que da como resultado que la corriente
- amplificada no llega a su valor calculado teoricamente debido a que supera
+ amplificada no llega a su valor calculado teóricamente debido a que supera
  los valores de corriente máxima que puede proporcional el operacional.
  Esto parecería ser un error de diseño ya que se intenta lograr una corriente
  que el operacional no es capaz de proporcionar, sin embargo esto no es
@@ -1405,9 +1455,9 @@ l, cabe mencionar que más adelante se verá que la tensión
  este caso límite pierde relevancia.
  Por último, cabe rescatar que en caso de que no se quisiera trabajar con
  las corrientes máximas del operacional (por ejemplo, en caso de que se
- trabaje con un opamp que no pueda ser exigido de esta manera, aunque no
+ trabaje con un Opamp que no pueda ser exigido de esta manera, aunque no
  es el caso del LM324) se podría colocar una resistencia a la salida del
- opamp lo suficientemente grande para limitar la corriente amplificada y
+ Opamp lo suficientemente grande para limitar la corriente amplificada y
  que esta sea menor a la máxima del operacional.
 \end_layout
 
@@ -1416,7 +1466,7 @@ Como se ha mencionado anteriormente, este bloque brindará una corriente
  significativa al nodo crítico que es proporcional a las variaciones de
  la entrada.
  En cuanto al nodo crítico, este será común a los 3 bloques que se describirán
- a continuación en las siguientes subsecciones.
+ a continuación en las siguientes sub secciones.
 \end_layout
 
 \begin_layout Subsection
@@ -1433,10 +1483,11 @@ pre-regulador
 \end_inset
 
  debe encargarse de suministrar una referencia a partir de la cual se concreten
- las correciones en la salida.
+ las correcciones en la salida.
  Esta magnitud constante de referencia proporcionada por el pre-regulador
- es distribuida hacia el bloque que concreta la correción en la salida (bloque
- de paso, como se verá más adelante) según existan o no errores esta última.
+ es distribuida hacia el bloque que concreta la corrección en la salida
+ (bloque de paso, como se verá más adelante) según existan o no errores
+ esta última.
  En el caso del circuito a implementar, se obtiene la señal de error de
  la salida en la corriente que ingresa o egresa del nodo crítico según lo
  determine el bloque de amplificación de error.
@@ -1452,7 +1503,7 @@ pre-regulador
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1479,7 +1530,7 @@ Circuito Pre-regulador
 Como se muestra en la figura, el transistor, junto con los dos diodos y
  resistencias forman una fuente de corriente constante.
  El valor de la corriente que egresa del colector del transistor se puede
- obtener observando que la caida de tensión en la resistencia y la juntura
+ obtener observando que la caída de tensión en la resistencia y la juntura
  emisor-base del transistor 
 \begin_inset Quotes eld
 \end_inset
@@ -1553,10 +1604,10 @@ El valor de la corriente de colector debe ser tal que sea suficiente para
 \end_layout
 
 \begin_layout Standard
-Sin tener en cuenta la corriente que pudiera suministrar el opamp, ya que
+Sin tener en cuenta la corriente que pudiera suministrar el Opamp, ya que
  en definitiva la corriente del operacional se adaptará a los valores de
- corriente necesarios para lograr una correción adecuada, la corriente constante
- del colector debería ser de 
+ corriente necesarios para lograr una corrección adecuada, la corriente
+ constante del colector debería ser de 
 \begin_inset Formula $0.75mA$
 \end_inset
 
@@ -1765,8 +1816,8 @@ Componentes del Pre-regulador
 
 \begin_layout Standard
 En cuanto a la tensión de los diodos y la juntura emisor base del transistor
- PNP, estas enrealidad pueden no coincidir y por lo tanto cambiaría el valor
- de corriente de colector.
+ PNP, estas en realidad pueden no coincidir y por lo tanto cambiaría el
+ valor de corriente de colector.
  Además de este motivo por el cual se varía la corriente, existe el hecho
  de que la temperatura en el circuito aumente si existe un elemento de potencia,
  por lo tanto podría disminuir la tensión de Juntura de los transistores
@@ -1784,7 +1835,7 @@ adas por la corriente que brinda el bloque amplificador de error, mientras
 \end_layout
 
 \begin_layout Standard
-Finalmente, el pre-regulador es el proovedor de una corriente constante
+Finalmente, el pre-regulador es el proveedor de una corriente constante
  que será distribuida en el nodo crítico.
  Se podría adjudicar el nombre de 
 \begin_inset Quotes eld
@@ -1804,19 +1855,19 @@ Bloque de Paso - Amplificación de Corriente
 \end_layout
 
 \begin_layout Standard
-El bloque de paso se encarga de concretar las correciones que van a indicar
+El bloque de paso se encarga de concretar las correcciones que van a indicar
  los bloques anteriores.
  A lo largo de los desarrollos de los bloques anteriores se manejaron niveles
- de corriente del orden de 
+ de corriente del orden de los 
 \begin_inset Formula $mA$
 \end_inset
 
- (miliampers), sin embargo la fuente debe ser capaz de brindar 
+, sin embargo la fuente debe ser capaz de brindar 
 \begin_inset Formula $1.5A$
 \end_inset
 
  a una carga.
- En el bloque de paso, las correciones se realizarán amplificando la corriente
+ En el bloque de paso, las correcciones se realizarán amplificando la corriente
  proveniente de los bloques anteriores y provocando en la salida el nivel
  de tensión fijado por la resistencia de realimentación.
 \end_layout
@@ -1832,8 +1883,8 @@ TIP122
 \end_inset
 
  que tiene una ganancia de corriente típica de 2500 veces.
- Este valor de ganancia es necesario para realizar los calculos de la corriente
- del pre-regulador, aunque enrealidad se tomó una ganancia de 2000 (20%
+ Este valor de ganancia es necesario para realizar los cálculos de la corriente
+ del pre-regulador, aunque en realidad se tomó una ganancia de 2000 (20%
  menos de lo indicado en la hoja de datos) para evitar errores de diseño
  debido a desviaciones de los parámetros indicados por el fabricante.
 \end_layout
@@ -1848,7 +1899,7 @@ A continuación se presenta una imagen que ayuda a describir el circuito
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2823,11 +2874,7 @@ Finalmente, el circuito completo se presenta mediante la siguiente figura:
 placement H
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2851,9 +2898,9 @@ Circuito Completo
 \end_layout
 
 \begin_layout Standard
-En la figura se pueden observar todos los bloques que se han descripto anteriorm
-ente interconectados entre sí y además se pueden observar las divisiones
- de amplificador, realimentador, generador y carga, según el diagrama en
+En la figura se pueden observar todos los bloques que se han descrito anteriorme
+nte interconectados entre sí y además se pueden observar las divisiones
+ de amplificador, re-alimentador, generador y carga, según el diagrama en
  bloques de señal utilizado en la teoría de realimentación negativa.
 \end_layout
 
@@ -2882,8 +2929,8 @@ A modo de mostrar como actuaría el lazo de realimentación, se utilizará
 
 .
  Por lo tanto, la corriente de salida que corresponde a la del emisor del
- Darlington disminuirá y en definitiva dsiminuirá la corriente que circule
- por la carga, lo que ocasionaré que se produzca un cambio de tensión Rque
+ Darlington disminuirá y en definitiva disminuirá la corriente que circule
+ por la carga, lo que ocasionara que se produzca un cambio de tensión que
  contrarreste al error generado inicialmente.
  En esta secuencia se puede notar como el lazo actúa ante un aumento de
  la tensión de salida.
@@ -2932,7 +2979,7 @@ Siguiendo con este razonamiento, se identifica al operacional del bloque
 \end_layout
 
 \begin_layout Standard
-Este razonamiento enrealidad se puede formalizar matemáticamente mediante
+Este razonamiento en realidad se puede formalizar matemáticamente mediante
  la teoría de respuesta en frecuencia, criterio de Barkhausen y 
 \begin_inset Quotes eld
 \end_inset
@@ -2950,7 +2997,7 @@ Disipación de Potencia - Cálculo de Disipador
 
 \begin_layout Standard
 Como se ha explicado anteriormente, el bloque de paso del circuito consta
- de una transistor amlpificador de corriente, por cuyo emisor egresan hasta
+ de una transistor amplificador de corriente, por cuyo emisor egresan hasta
  
 \begin_inset Formula $1.5A$
 \end_inset
@@ -2961,12 +3008,20 @@ Como se ha explicado anteriormente, el bloque de paso del circuito consta
  supere la potencia máxima que soportan disipar físicamente los transistores
  Darlington.
  De echo, según los cálculos que se realizaron anteriormente, el transistor
- TIP122 debe llegar a disipar ASDJKASDKASD Watt en la condición de carga
- mínima y tensión máxima (máxima corriente), sin embargo según la hoja de
- datos del fabricante este transistor solo puede soportar la disipación
- de 2Watts.
+ TIP122 debe llegar a disipar aproximadamente 
+\begin_inset Formula $12$
+\end_inset
+
+ 
+\begin_inset Formula $Watts$
+\end_inset
+
+ en la condición de maxima potencia en el transistor de paso.
+ Dada por las ecuaciones de la sección de foldback explicada anteriormente,
+ sin embargo según la hoja de datos del fabricante este transistor solo
+ puede soportar la disipación de 2Watts.
  Es decir, que en principio el transistor se destruiría antes de llegar
- a conducir tal corriente máxima.
+ a esa condición de potencia maxima que debe aguantar el TIP.
 \end_layout
 
 \begin_layout Standard
@@ -3035,7 +3090,7 @@ Según la hoja de datos del fabricante del TIP122,
 \end_inset
 
 .
- Luego, sabiendo tambien del fabricante que la potencia máxima posible sin
+ Luego, sabiendo también del fabricante que la potencia máxima posible sin
  disipador es de 
 \begin_inset Formula $2W$
 \end_inset
@@ -3058,12 +3113,20 @@ Luego, considerando que se utiliza un capacitor convencional para los cuales
 \end_inset
 
 , se puede despejar la resistencia térmica máxima que puede tener el disipador
- para poder disipar una potencia de ASDASDASDASDKKL y se obtiene lo siguiente:
+ para poder disipar una potencia de aproximadamente 
+\begin_inset Formula $12$
+\end_inset
+
+ 
+\begin_inset Formula $Watts$
+\end_inset
+
+ y se obtiene lo siguiente:
 \end_layout
 
 \begin_layout Standard
 \align center
-\begin_inset Formula $R_{thd-ambiente}=\frac{T_{j}-T_{a}}{P}-R_{thj-c}-R_{thc-d}=(\frac{153.84-25}{}-1-1.92)°C/W\simeq$
+\begin_inset Formula $R_{thd-ambiente}=\frac{T_{j}-T_{a}}{P}-R_{thj-c}-R_{thc-d}=(\frac{153.84-25}{12}-1-1.92)°C/W\simeq7.82\text{°}C/W$
 \end_inset
 
 
@@ -3089,7 +3152,7 @@ Teniendo en cuenta esta relación de compromiso, se eligió un disipador con
 \end_layout
 
 \begin_layout Subsection
-Caracterísiticas y Parámetros Importantes del Circuito
+Características y Parámetros Importantes del Circuito
 \end_layout
 
 \begin_layout Standard
@@ -3135,7 +3198,7 @@ a
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3221,8 +3284,8 @@ Otro parámetro importante que se puede calcular analíticamente es el del
  Suponga que a la salida se tienen 9Volts (tensión máxima de salida), entonces
  la la tensión en el nodo crítico debe ser de 10.4 Volts aproximadamente
  en polarización debido a las dos junturas de base-emisor del Darlington.
- Además, en el preregulador cae una tension de diodo y una tensión de colector
- emisor, puediendose estimar esta caida como 1.2 Volts.
+ Además, en el pre-regulador cae una tensión de diodo y una tensión de colector
+ emisor, pudiéndose estimar esta caída como 1.2 Volts.
  Luego, se tiene que para poder polarizar todos los componentes de manera
  correcta se necesita una tensión 
 \begin_inset Formula $"V1"$
@@ -3244,7 +3307,7 @@ Otro parámetro importante que se puede calcular analíticamente es el del
 \end_layout
 
 \begin_layout Standard
-Finlamente, se presenta en la siguiente tabla algunos de los parámetros
+Finalmente, se presenta en la siguiente tabla algunos de los parámetros
  importantes de la fuente:
 \end_layout
 
@@ -3365,7 +3428,7 @@ Parámetros de Importancia del Regulador de Tensión
 \end_layout
 
 \begin_layout Section
-Simulaciones en LTspice
+Simulaciones en LTSpice
 \end_layout
 
 \begin_layout Standard
@@ -3419,7 +3482,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulaciones de Caracteristica de Salida
+Simulaciones de Característica de Salida
 \end_layout
 
 \end_inset
@@ -3448,7 +3511,7 @@ La primer imagen corresponde a la simulación con carga mínima mientras que
  según lo simulado.
  En cuanto a la imagen correspondiente a la simulación sin carga, de esta
  se puede notar como se llegan a los 9 Volts de salida con una resistencia
- de realimentador de 
+ de re-alimentador de 
 \begin_inset Formula $900\Omega$
 \end_inset
 
@@ -3460,7 +3523,7 @@ Impedancia de Salida en Regulación
 \end_layout
 
 \begin_layout Standard
-De las simulaciones anteriores sobre la característica de salida, se podria
+De las simulaciones anteriores sobre la característica de salida, se podría
  intentar observar la resistencia de salida al identificar cuanto cambio
  la tensión de salida desde el vacío hasta carga mínima.
  Sin embargo, en la simulación que se expuso el cambio de tensión es relativamen
@@ -3491,10 +3554,6 @@ e nula (
 \end_layout
 
 \begin_layout Subsection
-Características del Foldback
-\end_layout
-
-\begin_layout Subsection
 Rechazo de Variaciones en la Alimentación
 \end_layout
 
@@ -3522,7 +3581,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulacione de PSRR
+Simulación de PSRR
 \end_layout
 
 \end_inset
@@ -3563,7 +3622,7 @@ Es decir que las variaciones de la salida ante variaciones de la alimentación
 \begin_inset Quotes eld
 \end_inset
 
-practicamente imperceptibles
+prácticamente imperceptibles
 \begin_inset Quotes erd
 \end_inset
 
@@ -3615,7 +3674,7 @@ Mediciones y Análisis de Resultados
 \begin_layout Standard
 A continuación se mostrarán las mediciones que se realizaron para corroborar
  el funcionamiento del circuito y se compararán con los resultados de las
- simulaciones y el análsis teórico.
+ simulaciones y el análisis teórico.
 \end_layout
 
 \begin_layout Subsection
@@ -3624,12 +3683,12 @@ Característica de Salida
 
 \begin_layout Standard
 Una vez que se comprobó que la fuente regula para tensiones entre 0 y 9
- Volts se fijó el realimentador para obtener 9 Volts a la salida en vació.
+ Volts se fijó el re-alimentador para obtener 9 Volts a la salida en vació.
  Luego se agregó una resistencia del orden de los 
 \begin_inset Formula $K\Omega$
 \end_inset
 
- y se fue disminuyendo la carga hasta llegar a al resitencia de carga mínima.
+ y se fue disminuyendo la carga hasta llegar a al resistencia de carga mínima.
  De estas mediciones se obtuvo un gráfico de 
 \begin_inset Formula $V_{o}$
 \end_inset
@@ -3643,7 +3702,7 @@ Una vez que se comprobó que la fuente regula para tensiones entre 0 y 9
 \end_inset
 
 ).
- Luego, prosiguiendo con la medición de la caracterísitca de salida se obtuvo
+ Luego, prosiguiendo con la medición de la característica de salida se obtuvo
  un nuevo gráfico al seguir disminuyendo la carga para entrar en la 
 \begin_inset Quotes eld
 \end_inset
@@ -3653,7 +3712,7 @@ región de foldback
 \end_inset
 
 .
- A continuación se muestran ambos gráficos superpuestos:
+ A continuación se muestra el gráfico obtenido:
 \end_layout
 
 \begin_layout Standard
@@ -3662,6 +3721,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Vo(Io)_medido.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3697,7 +3767,15 @@ Este gráfico no es el de una función ya que para un valor de corriente existen
 
 \begin_layout Standard
 Dicho esto, del gráfico se puede notar que la corriente máxima obtenida
- es de XXXXxxx para una carga de XXXXXx.
+ es de 
+\begin_inset Formula $1.44A$
+\end_inset
+
+ para una carga de aproximadamente 
+\begin_inset Formula $6.8\Omega$
+\end_inset
+
+.
  La corriente máxima entonces es menor a 
 \begin_inset Formula $1.5A$
 \end_inset
@@ -3706,8 +3784,16 @@ Dicho esto, del gráfico se puede notar que la corriente máxima obtenida
  superar la máxima corriente que se ha medido.
  Además, en cuanto a la región de foldback, se midió satisfactoriamente
  una respuesta lineal como era de esperar, y se obtuvo una corriente de
- XXXXXxx para el corto- circuito.
- ANALIZAR SI ESTO ESTA BIEEEEEEEEEEEEEEENNNNNNNNNNNNNNNNNNNNNN
+ 
+\begin_inset Formula $0.87A$
+\end_inset
+
+ para el corto-circuito, superando la predicción analítica.
+ Estos errores se deben a la implementación física del circuito, la cual
+ incluye desviaciones de los valores ideales y por asumpción de parámetros
+ en la cuentas los cuales no se llevan a la perfección en la practica.
+ A pesar de estos factores, al dar un margen a la hora del diseño, se pudieron
+ mantener los parámetros dentro de los rangos especificados.
 \end_layout
 
 \begin_layout Standard
@@ -3715,12 +3801,29 @@ Por otro lado, se puede notar que para
 \begin_inset Formula $Rload_{MÍN}$
 \end_inset
 
- y para el vacío se obtuvo una diferencia 
+ y se obtuvo una diferencia 
 \begin_inset Formula $\triangle V$
 \end_inset
 
- a la salida de XXXXXXXXXXXX.
- EXPLICACIIIIIIIIIIIIOOOOOOOOOOOOOOONNNNNNNNN.
+ a la salida de 
+\begin_inset Formula $50mV$
+\end_inset
+
+ para la zona cercana antes de entrar al foldback, donde el 
+\begin_inset Formula $\triangle I$
+\end_inset
+
+ correspondiente a esta medición fue de 
+\begin_inset Formula $200mA$
+\end_inset
+
+.
+ Se midió por esta zona ya que no se perciben cambio de tensión apreciable
+ para resistencias grandes (mayores aproximadamente a 
+\begin_inset Formula $12\Omega$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -3733,7 +3836,8 @@ De este
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $R_{out}=\frac{\triangle V}{\triangle I}$
+\align center
+\begin_inset Formula $R_{out}=\frac{\triangle V}{\triangle I}=\frac{50mV}{200mA}=0.25\Omega$
 \end_inset
 
 
@@ -3746,7 +3850,7 @@ Esta resistencia de salida es relativamente pequeña, lo cual tiene sentido
 \end_layout
 
 \begin_layout Standard
-COMPARACION CON SIMULACION Y ANALISIS TEÓRICO
+COMPARACIÓN CON SIMULACIÓN Y ANÁLISIS TEÓRICO
 \end_layout
 
 \begin_layout Subsection
@@ -3757,7 +3861,7 @@ Rechazo de Variaciones en la Alimentación
 Para medir el rechazo de las variaciones en la alimentación, se utilizó
  una fuente de alimentación conformada tan solo por un transformador para
  utilizar la tensión de línea, y un puente de diodos con un capacitor.
- Esta fuente generá una tensión constante pero montada a un riple significativo.
+ Esta fuente generá una tensión constante pero montada a un ripple significativo.
  A partir de este dispositivo logró obtenerse lo siguiente:
 \end_layout
 
@@ -3800,7 +3904,7 @@ Medición PSRR - en vacío
 De esta medición en vacío se observa la señal representada en amarillo que
  corresponde a la alimentación con ripple, mientras que la salida (color
  verde) se encuentra sin ripple.
- Enrealidad el osciloscopio mide una señal montada a la continua de 9Volts
+ En realidad el osciloscopio mide una señal montada a la continua de 9Volts
  que conlleva una tensión pico a pico de 45mV, sin embargo por la forma
  de la señal se puede notar que se trata del ruido propio de las condiciones
  de medición en el laboratorio.
@@ -3853,7 +3957,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Medición PSRR - 
+Medición PSRR 
 \end_layout
 
 \end_inset
@@ -3874,9 +3978,9 @@ Medición PSRR -
 El cambio que se notó comparando con la medición en vacío es tan solo un
  ripple que aparenta ser no periódico y alineal.
  De hecho, en la imagen de la izquierda no se observa ripple, pero al aumentar
- el timescale del osciloscopio (imagen de la derecha) se pudo observar un
- ripple errático que no corresponde con una forma de onda senoidal, triangular
- ni cuadrada.
+ el time scale del osciloscopio (imagen de la derecha) se pudo observar
+ un ripple errático que no corresponde con una forma de onda senoidal, triangula
+r ni cuadrada.
  Este ripple es de 62mV aproximadamente, por ende se podría calcular el
  PSRR para esta carga:
 \end_layout
@@ -3936,7 +4040,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Medición PSRR - 
+Medición PSRR 
 \end_layout
 
 \end_inset
@@ -3972,12 +4076,12 @@ Si se aplica la fórmula del
 \begin_layout Standard
 En cuanto al comportamiento alineal, este es esperable debido a que con
  esta carga relativamente baja la fuente de alimentación provee un valor
- medio de tensión de 11.7V, pero en los semiciclos donde la fuente otorga
+ medio de tensión de 11.7V, pero en los hemiciclos donde la fuente otorga
  menos tensión la salida no puede satisfacer los 9Volts ya que no se llegan
  a polarizar todos los transistores.
  De hecho más adelante, en la sección de rendimiento, se verá que la salida
  no puede responder correctamente con bajos valores de tensión de alimentación.
- En los semiciclos en los cuales la fuente provee un valor mayor a su valor
+ En los hemiciclos en los cuales la fuente provee un valor mayor a su valor
  medio, en cambio, ya no se presenta variación en la señal de salida.
 \end_layout
 
@@ -4002,7 +4106,7 @@ Rendimiento del Regulador
 \begin_layout Standard
 Las mediciones del rendimiento se realizaron para una regulación de tensión
  máxima (9Volts), para distintas cargas.
- La medición constó en alimentar en principio con 15Volts (tensión sufiiciente
+ La medición constó en alimentar en principio con 15Volts (tensión suficiente
  para el correcto funcionamiento para cualquier carga) y disminuir esta
  tensión hasta observar que la tensión en la entrada disminuyó una magnitud
  apreciable por el osciloscopio (50mV aproximadamente).
@@ -4017,6 +4121,7 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
@@ -4194,7 +4299,7 @@ Vacío
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
+Rendimiento
 \end_layout
 
 \end_inset
@@ -4240,6 +4345,37 @@ De la tabla anterior se puede observar como el rendimiento baja para cargas
 
 \begin_layout Section
 Conclusiones
+\end_layout
+
+\begin_layout Standard
+A lo largo de este artículo se describió el desarrollo del proceso de diseño
+ de una regulador de tensión, realizándose análisis teórico mediante la
+ teoría de realimentación negativa, apoyándose además en herramientas de
+ simulación y teniendo en cuenta el objetivo de lograr el máximo rendimiento
+ logrando sin "sobre dimensionar" características de la fuente y logrando
+ regular un rango de tensiones especificadas.
+\end_layout
+
+\begin_layout Standard
+A modo de conclusión se puede afirmar que las mediciones prácticas coincidieron
+ con lo predicho por el análisis teórico en cuanto al funcionamiento y la
+ correcta regulación de la fuente.
+ Por otro lado, a pesar de que existieron discrepancias entre la práctica,
+ la simulación y el análisis teórico respecto a coincidencia exacta de resultado
+s numéricos de algunos parámetros del regulador como impedancia de salida
+ o rechazo de variaciones de la alimentación (PSRR), estos parámetros resultaron
+ de la misma magnitud mediante cualquiera de los tres enfoques (teoría,
+ práctica, simulación).
+ Es decir, por ejemplo, tanto en la teoría como en la práctica el PSRR resulto
+ un valor elevado, mientras que la resistencia de salida resulto muy cercana
+ a cero.
+\end_layout
+
+\begin_layout Standard
+En fin, se logró materializar un circuito que logró características aceptables
+ de rendimiento, regulación, protección y robustez teniendo en cuenta que
+ algunos bloques del circuito lograron funcionar satisfactoriamente a pesar
+ de las condiciones extremas de corriente.
 \end_layout
 
 \end_body
