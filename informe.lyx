@@ -341,7 +341,17 @@ cas de estabilidad mencionadas.
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/1DiagramaEnBloquesDeSenal.png
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -382,7 +392,18 @@ A continuación se propone un diagrama en bloques pero esta vez de un modelo
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/2DiagramaEnBloquesDeRegulador.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -449,7 +470,18 @@ referencia y muestreo de error
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/3CircuitoDeReferenciaYMuestreoDeError.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -525,7 +557,18 @@ Nótese que este razonamiento para la obtención de la tensión de salida es
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/4AnalogiaCircuitoNoInversorConOperacional.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -578,7 +621,17 @@ Aún más, analizando los nodos de entrada y de salida, se puede notar que
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/5RealimentadorConTensionDeEntrada.png
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1062,7 +1115,17 @@ corto
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/6CircuitoAmplificadorDeError.png
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1503,7 +1566,18 @@ pre-regulador
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/7Circuito_preregulador.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1899,7 +1973,18 @@ A continuación se presenta una imagen que ayuda a describir el circuito
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/8Circuito_de_transistor_de_paso.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2861,6 +2946,47 @@ Potencia en el transistor de paso
 
 \end_layout
 
+\begin_layout Standard
+Se puede apreciar en la figura 14 como el foldback actuá para disminuir
+ la potencia disipada en el transistor de paso.
+ Ya que sin el foldback, la hipérbole que se puede apreciar a partir de
+ los 
+\begin_inset Formula $6.43\Omega$
+\end_inset
+
+ se continuaría hasta el corto circuito, generando una potencia de 
+\begin_inset Formula $V_{1}\cdotp I_{o}=21$
+\end_inset
+
+ 
+\begin_inset Formula $Watts.$
+\end_inset
+
+ Se puede ver en la figura 12 como la potencia en maxima que se alcanza
+ en la carga es de aproximadamente 
+\begin_inset Formula $12.2$
+\end_inset
+
+ 
+\begin_inset Formula $Watts$
+\end_inset
+
+, y esta se alcanza en la 
+\begin_inset Formula $R_{L(MIN)}$
+\end_inset
+
+.
+ Se puede ver como a resistencias bajas la potencia puede llegar a varios
+ watts.
+ Por lo que se debe tener cuidado con la carga que se introduce en el circuito
+ ya que esta puede llegar a tener que ser una de potencia a pesar de que
+ nunca se superen los 
+\begin_inset Formula $1.5A$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 Interconexión de Bloques y Lazo de Realimentación
 \end_layout
@@ -2874,7 +3000,18 @@ Finalmente, el circuito completo se presenta mediante la siguiente figura:
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/9.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3198,7 +3335,18 @@ a
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/10CircuitoDeAmplificadorBasicoParaElCalculoDed.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3847,10 +3995,6 @@ De este
 Esta resistencia de salida es relativamente pequeña, lo cual tiene sentido
  ya que el circuito muestrea tensión, habiendo un lazo de realimentación
  negativa en el mismo.
-\end_layout
-
-\begin_layout Standard
-COMPARACIÓN CON SIMULACIÓN Y ANÁLISIS TEÓRICO
 \end_layout
 
 \begin_layout Subsection
